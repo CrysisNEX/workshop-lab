@@ -1,7 +1,7 @@
 ---
 - name: gather-facts
   cisco.ios.ios_facts:
-    gather_subnet: all
+    gather_subset: all
   
 - name:
   debug:
