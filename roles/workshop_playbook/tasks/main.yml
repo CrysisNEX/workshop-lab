@@ -7,5 +7,8 @@
 #- name: "Task 3: Set SNMP"
 #  import_tasks: config-snmp.yaml
 
-- name: "Task 4: Create New User"
-  import_tasks: create-user.yaml
+#- name: "Task 4: Create New User"
+#  import_tasks: create-user.yaml
+
+- name: "Task: Health Check"
+  import_tasks: health-check.yaml
