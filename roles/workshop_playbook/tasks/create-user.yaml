@@ -6,8 +6,8 @@
     password_type: password # Or 'secret' for type 5 encrypted password   
     privilege: 15
     state: present
-    vars:
-      new_user_password: "SuperSecureStrongPassword" # Replace with a strong password
+  vars:
+    new_user_password: "SuperSecureStrongPassword" # Replace with a strong password
 
 - name: Save running to startup always
   cisco.ios.ios_config:
