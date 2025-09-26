@@ -1,6 +1,6 @@
 ---
 - name: Push SNMP configuration
-  cisco.ios.ios_snmp_server module:
+  cisco.ios.ios_snmp_server:
     state: merged
     config:
       location: "Datacenter-1"
@@ -12,3 +12,7 @@
         - name: "private"
           acl_v4: "20"
           rw: true
+- name: Save to Startup Config
+  ios_command:
+    commands:
+      - "wr mem"
