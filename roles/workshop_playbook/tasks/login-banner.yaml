@@ -4,14 +4,14 @@
   connection: network_cli
 
   tasks:
-    - name: Set login banner
-      cisco.ios.ios_banner:
-        banner: login
-        multiline_delimiter: "%"
-        text: |
+  - name: Set login banner
+    cisco.ios.ios_banner:
+      banner: login
+      multiline_delimiter: "%"
+      text: |
           *#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
           * WARNING: Unauthorized access to this device is prohibited. *
           * All activities are monitored and recorded.                 *
           * Contact Administrator at Administrator@example.com         *       *
           *#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
-        state: present
+      state: present
