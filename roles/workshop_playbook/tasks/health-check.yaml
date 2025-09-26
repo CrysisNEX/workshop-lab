@@ -8,8 +8,22 @@
   debug:
     msg: "5-second CPU utilization: {{ hardware_facts.ansible_facts.ansible_net_cpu_utilization | default('N/A') }} %"
 
-#- name: CPU Utilization Check
-#  when:
-#    - hardware_facts.ansible_facts.ansible_net_cpu_utilization is defined
-#    - hardware_facts.ansible_facts.ansible_net_cpu_utilization
+- name: CPU Utilization Check
+  when:
+    - hardware_facts.ansible_facts.ansible_net_cpu_utilization is defined
+    - hardware_facts.ansible_facts.ansible_net_cpu_utilization.core.five_seconds < cpu_limit
+  set_fact:
+    cpu_pass: 'true'
   
+  # debug all to simulate high cpu
+  # no debug all to stop debug
+
+- name: Create stat of hosts to add to critical_inventory
+  when: not cpu_pass
+  set_stats:
+    data:
+      hosts_to_add: "{{ hosts_to_add | default([]) + [item] }}"
+    with items:
+      - "{{ inventory_hostname }}"
+
+  #to be continued when workshop_playbook_reboot.yaml is executed. 
