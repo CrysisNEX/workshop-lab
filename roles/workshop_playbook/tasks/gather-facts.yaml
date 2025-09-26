@@ -1,3 +1,11 @@
 ---
 - name: gather-facts
-  hosts: 
+  cisco.ios.ios_facts:
+    gather_subnet: all
+  
+- name:
+  debug:
+    msg:
+      - "Hostname: {{ ansible_net_hostname }}"
+      - "OS Type: {{ ansible_net_iostype }}"
+      - "Model: {{ ansible_net_model }}""  
