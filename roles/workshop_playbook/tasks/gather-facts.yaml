@@ -8,4 +8,4 @@
     msg:
       - "Hostname: {{ ansible_net_hostname }}"
       - "OS Type: {{ ansible_net_iostype }}"
-      - "Model: {{ ansible_net_model }}""  
+      - "Model: {{ ansible_net_model }}" 
