@@ -1,9 +1,15 @@
 ---
 - name: gather-facts
   cisco.ios.ios_facts:
-    gather_subset: hardware
+    gather_subset: "hardware"
     register: hardware_facts
 
 - name: Display 5-second CPU utilization
   debug:
-    msg: "5-second CPU utilization: {{ ios_facts_output.ansible_net_cpu_utilization | default('N/A') }} %"
+    msg: "5-second CPU utilization: {{ hardware_facts.ansible_facts.ansible_net_cpu_utilization | default('N/A') }} %"
+
+#- name: CPU Utilization Check
+#  when:
+#    - hardware_facts.ansible_facts.ansible_net_cpu_utilization is defined
+#    - hardware_facts.ansible_facts.ansible_net_cpu_utilization
+  
