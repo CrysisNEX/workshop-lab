@@ -1,7 +1,7 @@
 ---
 - name: gather-facts
   cisco.ios.ios_facts:
-    gather_subset: "hardware"
+    gather_subset: "!hardware"
     register: hardware_facts
 
 - name: Display 5-second CPU utilization
