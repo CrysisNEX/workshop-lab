@@ -7,6 +7,6 @@
       *#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
       * WARNING: Unauthorized access to this device is prohibited. *
       * All activities are monitored and recorded.                 *
-      * Contact Administrator at Administrator@example.com         *       *
+      * Contact Administrator at Administrator@example.com         *
       *#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
     state: present
